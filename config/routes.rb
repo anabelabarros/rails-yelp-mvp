@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
-  get 'reviews/new'
   resources :restaurants do
-    resources :reviews, only: [:new]
+    resources :reviews, only: [:new,:create]
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -11,4 +10,5 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+  root "restaurants#index"
 end
