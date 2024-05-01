@@ -7,24 +7,37 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
-categories = ["chinese", "italian", "japanese", "french", "belgian"]
+Restaurant.create!(
+  name: "C'est Bon C'est Belge",
+  address: "Rue du Bon-Secours, Brussel",
+  phone_number: "+321 23 45 67 89",
+  category: "belgian"
+)
 
-# Create 5 restaurants with different attributes
-puts "Cleaning database..."
-Restaurant.destroy_all
+Restaurant.create!(
+  name: "Epicure",
+  address: "Faubourg Saint Honoré, Paris",
+  phone_number: "+331 23 45 67 89",
+  category: "french"
+)
 
-puts "Creating restaurants..."
-restaurants_attributes = [
-  { name: "Dishoom", address: "7 Boundary St, London E2 7JE", phone_number: "123-456-7890", category: "indian" },
-  { name: "Pizza East", address: "56A Shoreditch High St, London E1 6PQ", phone_number: "234-567-8901", category: "italian" },
-  { name: "Sushi Bar", address: "123 Main St, Tokyo", phone_number: "345-678-9012", category: "japanese" },
-  { name: "La Brasserie", address: "456 Rue de Rivoli, Paris", phone_number: "456-789-0123", category: "french" },
-  { name: "Belgian Bistro", address: "789 Grand Place, Brussels", phone_number: "567-890-1234", category: "belgian" }
-]
+Restaurant.create!(
+  name: "Ristorante A Mano",
+  address: "Strausberger Platz, Berlin",
+  phone_number: "+491 23 45 67 89",
+  category: "italian"
+)
 
-restaurants_attributes.each do |attributes|
-  restaurant = Restaurant.create!(attributes)
-  puts "Created #{restaurant.name}"
-end
+Restaurant.create!(
+  name: "Teppanyaki Restaurant Sazanka",
+  address: "Ferdinand Bolstraat, Amsterdam",
+  phone_number: "+311 23 45 67 89",
+  category: "japanese"
+)
 
-puts "Finished!"
+Restaurant.create!(
+  name: "Sichuan Folk",
+  address: "Shoreditch, London",
+  phone_number: "+441 23 45 67 89",
+  category: "chinese"
+)
